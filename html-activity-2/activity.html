@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tokyo Revengers Fan Page - HTML Activity</title>
+</head>
+<body>
+
+  <!-- ==================== SECTION 1: IMAGES ==================== -->
+  <h2 id="images-section">Tokyo Revengers Images</h2>
+  
+  <!-- Image 1: Mikey with explicit width -->
+  <img src="images/mikey.jpg" alt="Manjiro Sano also known as Mikey leading the Tokyo Manji Gang" width="300">
+  
+  <!-- Image 2: Draken with explicit width (Fixes huge image size) -->
+  <img src="images/draken.jpg" alt="Ken Ryuguji also known as Draken standing with his dragon tattoo visible" width="300">
+  
+  <!-- Image 3: Shinichiro wrapped in figure with a figcaption -->
+  <figure style="margin: 15px 0 0 0;">
+    <img src="images/shinichiro.jpg" alt="Shinichiro Sano, the founder of the Black Dragon gang and Mikey's older brother" width="300">
+    <figcaption>Figure 1: Shinichiro Sano standing in front of his motorcycle shop, Sano Motors.</figcaption>
+  </figure>
+
+  <!-- ==================== SECTION 2: HYPERLINKS ==================== -->
+  <h2 id="links-section">Hyperlinks</h2>
+  <ul>
+    <!-- 1. Internal / Same page anchor link -->
+    <li><a href="#images-section">Jump back up to Images Section</a></li>
+    
+    <!-- 2. External link opening in a new tab -->
+    <li><a href="https://tokyo-revengers.fandom.com/wiki/Tokyo_Revengers_Wiki" target="_blank">Visit official Tokyo Revengers Wiki</a></li>
+    
+    <!-- 3. Email link -->
+    <li><a href="mailto:toman-captain@example.com">Send an Email to the Toman Captain</a></li>
+    
+    <!-- 4. Same-page anchor link jumping to Section 5 below -->
+    <li><a href="#dom-section">Jump down to HTML DOM Section</a></li>
+  </ul>
+
+  <!-- ==================== SECTION 3: MULTIMEDIA ==================== -->
+  <h2 id="media-section">Multimedia</h2>
+  
+  <!-- Audio Tag -->
+  <h3>Tokyo Revengers Soundtrack</h3>
+  <audio controls>
+    <source src="media/tr.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Video Tag -->
+  <h3>Tokyo Revengers Short Clip</h3>
+  <video controls width="400">
+    <source src="media/tr.mp4" type="video/mp4">
+    Your browser does not support the video element.
+  </video>
+
+  <!-- ==================== SECTION 4: USEFUL TAGS ==================== -->
+  <h2 id="tags-section">Useful Tags</h2>
+
+  <!-- Used <blockquote> to showcase Mikey's famous gang speech quote -->
+  <blockquote>"Is there anyone here who thinks Toman should give up? There isn't, right?"</blockquote>
+
+  <!-- Used <mark> to highlight key character names in the anime -->
+  <p>The story follows <mark>Takemichi Hanagaki</mark> as he travels back in time 12 years to save his middle school girlfriend.</p>
+
+  <!-- Used <code> to display the command Takemichi uses to trigger time travel -->
+  <p>In web terms, Takemichi triggers his time travel when he clicks <code>handshake()</code> with Naoto.</p>
+
+  <!-- ==================== SECTION 5: HTML DOM ==================== -->
+  <h2 id="dom-section">HTML DOM</h2>
+  <p>Check out my DOM tree screenshot saved as dom-tree.png in the project directory!</p>
+
+  <!-- 
+    DOM PARENT-CHILD RELATIONSHIP PARAGRAPH:
+    In this Tokyo Revengers web page, the <figure> element serves as the parent container for both the <img> and <figcaption> child elements.
+    Additionally, the <ul> element acts as a parent element containing four individual <li> items, each holding anchor link children.
+    Finally, the overall <body> element is the direct parent of all major section headings such as <h2 id="images-section">.
+  -->
+
+</body>
+</html>
