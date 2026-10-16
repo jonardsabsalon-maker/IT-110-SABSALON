@@ -1,0 +1,185 @@
+/* =========================================
+   1. Reset & Base Styles
+   ========================================= */
+
+/* Universal selector reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Type selector for body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    background-color: #f4f7f6; /* Hex color */
+    color: #333333;            /* Hex color */
+}
+
+/* Grouping selector for headings */
+h1, h2 {
+    font-weight: 700;
+    color: rgb(44, 62, 80);     /* RGB color */
+}
+
+header, footer {
+    text-align: center;
+    background-color: steelblue; /* Named color */
+    color: white;
+    padding: 1.5rem;
+}
+
+
+/* =========================================
+   2. Layout & Components
+   ========================================= */
+
+/* Class selector for cards */
+.card {
+    width: 500px;
+    padding: 20px;
+    border: 3px solid #2980b9; /* Width, style, and color in one line */
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin: 0 auto 20px auto;  /* Centers horizontally and spaces cards apart */
+}
+
+/* Total Rendered Width Calculation for .card:
+   Width = width (500px) + left padding (20px) + right padding (20px) + left border (3px) + right border (3px) = 546px.
+   (Since box-sizing: border-box is used, the total width remains exactly 500px, containing the padding and borders within). */
+
+/* ID selector for about section */
+#about {
+    position: relative;
+    border-color: #e74c3c; /* Stands out with a different border color */
+}
+
+/* Pseudo-element badge for #about top-right corner */
+#about::after {
+    content: "Active";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Class selector for intro paragraph */
+.intro {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* Pseudo-element: first letter styling on .intro */
+.intro::first-letter {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+
+/* =========================================
+   3. Navigation, Lists & Display
+   ========================================= */
+
+/* Nav links display and spacing */
+header nav a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* RGBA color */
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+/* Pseudo-class: hover effect for nav links */
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Descendant selector */
+.card p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Flex container for skills list */
+.skills-list {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    list-style: none;
+    margin-top: 10px;
+}
+
+/* Child selector: styling each skill li like a small tag */
+.skills-list > li {
+    background-color: #ecf0f1;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   4. Visibility, Overflow & Cascade Demo
+   ========================================= */
+
+/* Visibility and display properties */
+.hide-none {
+    display: none;
+}
+
+.hide-visibility {
+    visibility: hidden;
+}
+
+/* Difference explanation:
+   display: none completely removes the element from the document flow, leaving no gap.
+   visibility: hidden makes the element invisible, but it still occupies its original space and layout box on the page. */
+
+/* Scroll box styling */
+.scroll-box {
+    height: 120px;
+    overflow: auto;
+}
+
+
+/* =========================================
+   5. Cascade Demonstration
+   ========================================= */
+
+/* Rule 1 */
+.card p {
+    color: #333333;
+}
+
+/* Rule 2 */
+div.card p {
+    color: #111111;
+}
+/* Winning Rule & Cascade Explanation: 
+   'div.card p' wins over '.card p' because the selector has a higher specificity (one type selector 'div' plus two class selectors/pseudo-classes combined vs one class selector and one type selector). Specifically, adding the 'div' type selector increases the specificity score, making it override the preceding rule regardless of order. */
+
+
+/* =========================================
+   Reflection Questions
+   ========================================= */
+
+/*
+1. In your own words, why did one of your two conflicting rules win in Part A? (Think specificity and order.)
+- The rule with higher specificity won because its selector combined more specific components (like adding a type selector to a class selector), giving it more weight in the cascade than the simpler rule.
+
+2. What is the rendered width of one .card if box-sizing were content-box instead of border-box? Show your computation.
+- Width = width (500px) + left padding (20px) + right padding (20px) + left border (3px) + right border (3px) = 546px total rendered width.
+
+3. When would you choose visibility: hidden instead of display: none?
+- I would use visibility: hidden when I need to hide something temporarily but keep its space in the layout. This can prevent nearby items from shifting when the hidden content becomes invisible.
+*/
